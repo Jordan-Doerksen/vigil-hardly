@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- noindex: keeps this joke out of search results for the real company's name. The link still works for anyone who has it. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A parody. Not affiliated with Vigil Harbor.">
+<title>Vigil Hardly — Lumen in Tabs Open</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d0f0e; --bg2:#151816; --card:#1b1f1c; --ink:#e9e4d6; --dim:#9a968a;
+    --gold:#c9a45c; --moss:#5f7a55; --red:#d4574a; --line:#2a2f2b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  .serif{font-family:"Cormorant Garamond",Georgia,serif}
+  .tiny{font-size:12px;color:var(--dim)}
+
+  .banner{background:var(--red);color:#fff;text-align:center;font-weight:600;font-size:13px;padding:8px 12px}
+  .banner span{display:inline-block;animation:blink 1.2s steps(2) infinite}
+  @keyframes blink{50%{opacity:.2}}
+
+  nav{position:sticky;top:0;z-index:10;background:rgba(13,15,14,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;flex-wrap:wrap}
+  .logo{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+  .logo .jar{font-size:24px;display:inline-block;transform:rotate(-8deg)}
+  nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--dim)}
+  nav ul li{cursor:not-allowed}
+  .btn{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:10px 18px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;background:none;cursor:pointer;font-family:inherit}
+  .btn.solid{background:var(--gold);color:#111}
+  .btn:hover{filter:brightness(1.15)}
+  #runaway{position:relative;transition:transform .15s}
+
+  .hero{padding:90px 0 60px;position:relative;overflow:hidden}
+  .hero .motto{font-style:italic;color:var(--gold);font-size:20px;margin:0 0 6px}
+  .hero .motto small{color:var(--dim);font-style:normal;font-family:Inter;font-size:12px;margin-left:8px}
+  .hero h1{font-family:"Cormorant Garamond",serif;font-size:clamp(42px,7vw,86px);line-height:1;margin:0 0 20px;font-weight:700}
+  .hero h1 s{color:var(--dim);text-decoration-color:var(--red);text-decoration-thickness:4px}
+  .hero h1 em{color:var(--gold)}
+  .hero p.sub{max-width:660px;font-size:19px;color:var(--dim)}
+  .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .bottle{position:absolute;right:-20px;top:40px;font-size:220px;opacity:.12;transform:rotate(12deg);pointer-events:none}
+
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:20px 0 80px}
+  .stat{background:var(--bg2);padding:22px}
+  .stat b{display:block;font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold);line-height:1}
+  .stat span{font-size:14px}
+  .stat i{display:block;font-size:12px;color:var(--red);font-style:normal;margin-top:6px}
+
+  h2{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,4.5vw,52px);line-height:1.05;margin:0 0 10px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--gold);margin-bottom:8px}
+  section{padding:70px 0;border-top:1px solid var(--line)}
+  .lede{color:var(--dim);max-width:660px}
+
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:30px}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-direction:column}
+  .tier h3{font-family:"Cormorant Garamond",serif;font-size:28px;margin:0}
+  .tier .quote{font-style:italic;color:var(--dim);margin:6px 0 14px}
+  .tier .price{font-size:22px;font-weight:800;color:var(--gold)}
+  .tier .price small{display:block;font-size:12px;font-weight:400;color:var(--dim)}
+  .tier ul{padding-left:18px;margin:14px 0;flex:1}
+  .tier li{margin:6px 0}
+  .tier.featured{border-color:var(--gold);position:relative}
+  .tier.featured::before{content:"MOST INVOICED";position:absolute;top:-11px;left:20px;background:var(--gold);color:#111;font-size:11px;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.1em}
+
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:26px}
+  .steps div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;position:relative}
+  .steps div::before{counter-increment:s;content:counter(s);font-family:"Cormorant Garamond",serif;font-size:34px;color:var(--gold);display:block;line-height:1;margin-bottom:6px}
+  .steps div.last{border-color:var(--red)}
+  .steps div.last::before{color:var(--red)}
+
+  .lanes{display:grid;gap:14px;margin-top:28px}
+  .lane{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:center}
+  .lane h4{margin:0;font-size:15px}
+  .track{position:relative;height:40px;background:var(--bg);border-radius:8px;overflow:hidden;border:1px dashed var(--line)}
+  .packet{position:absolute;top:8px;left:8px;font-size:20px;animation:drive 4s linear infinite}
+  .lane:nth-child(2) .packet{animation-duration:3s}
+  .lane:nth-child(3) .packet{animation:yeet 2.2s ease-in infinite}
+  .track .end{position:absolute;right:10px;top:9px;font-size:13px;color:var(--dim)}
+  @keyframes drive{0%{left:8px}100%{left:calc(100% - 40px)}}
+  @keyframes yeet{0%{left:8px;top:8px;transform:rotate(0)}100%{left:calc(100% - 20px);top:-40px;transform:rotate(720deg)}}
+
+  .clients{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+  .client{background:var(--card);border-radius:14px;padding:22px;border:1px solid var(--line)}
+  .client .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--moss)}
+  .client h4{font-family:"Cormorant Garamond",serif;font-size:22px;margin:6px 0}
+  .client p{color:var(--dim);font-size:14px;margin:0}
+
+  .bottle-sec{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .jarbig{aspect-ratio:3/4;border-radius:40% 40% 18px 18px;border:2px solid #3a443c;background:radial-gradient(ellipse at 50% 85%,#2c3a2a 0 30%,transparent 31%),linear-gradient(#1a201b,#101310);position:relative;display:grid;place-items:center;max-width:360px;margin:auto;width:100%}
+  .jarbig .plant{font-size:90px;filter:grayscale(.7) brightness(.7);transform:rotate(80deg) translateY(30px)}
+  .jarbig .label{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);background:#e9e4d6;color:#111;font-size:11px;padding:4px 10px;border-radius:3px;font-weight:700;white-space:nowrap}
+  .jarbig .fly{position:absolute;top:30%;left:30%;font-size:18px;animation:buzz 3s ease-in-out infinite}
+  @keyframes buzz{0%,100%{transform:translate(0,0)}25%{transform:translate(60px,-20px)}50%{transform:translate(20px,40px)}75%{transform:translate(-30px,10px)}}
+
+  .audit{background:linear-gradient(135deg,#1c2019,#141713);border:1px solid var(--gold);border-radius:20px;padding:36px}
+  #auditOut{margin-top:20px;font-family:ui-monospace,Consolas,monospace;font-size:14px;background:#0a0b0a;border-radius:10px;padding:16px;min-height:80px;white-space:pre-wrap;color:#9fd18b}
+
+  .svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:26px}
+  .svc div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .svc b{display:block;font-size:16px;margin-bottom:4px}
+  .svc span{font-size:14px;color:var(--dim)}
+  .svc em{display:block;font-style:normal;color:var(--gold);font-size:13px;margin-top:8px}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:10px 0}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--dim);margin:10px 0 0}
+
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}
+  blockquote{margin:0;background:var(--card);border-left:3px solid var(--gold);padding:18px 20px;border-radius:0 12px 12px 0;font-family:"Cormorant Garamond",serif;font-size:21px;font-style:italic}
+  blockquote cite{display:block;font-family:Inter;font-style:normal;font-size:13px;color:var(--dim);margin-top:10px}
+  .stars{color:var(--gold);font-style:normal;font-size:14px}
+
+  footer{border-top:1px solid var(--line);padding:50px 0 120px;color:var(--dim);font-size:14px}
+  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px}
+  footer h5{color:var(--ink);margin:0 0 8px;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+  footer p{margin:4px 0}
+  .parody{margin-top:30px;border:1px dashed var(--line);border-radius:10px;padding:12px 14px}
+
+  #chat{position:fixed;right:18px;bottom:18px;z-index:20;width:min(330px,calc(100vw - 36px))}
+  #chatBox{display:none;background:var(--card);border:1px solid var(--gold);border-radius:14px;margin-bottom:10px;overflow:hidden}
+  #chatBox.open{display:block}
+  #chatLog{height:220px;overflow-y:auto;padding:12px;font-size:14px}
+  #chatLog p{margin:6px 0;padding:8px 10px;border-radius:10px;max-width:85%}
+  #chatLog .bot{background:#262b27}
+  #chatLog .me{background:var(--gold);color:#111;margin-left:auto}
+  #chatForm{display:flex;border-top:1px solid var(--line)}
+  #chatForm input{flex:1;background:none;border:0;color:var(--ink);padding:12px;font:inherit;min-width:0}
+  #chatForm button{background:var(--gold);border:0;padding:0 14px;font-weight:700;cursor:pointer}
+  #chatToggle{float:right}
+
+  @media (max-width:720px){
+    .bottle-sec{grid-template-columns:1fr}
+    .lane{grid-template-columns:1fr}
+    nav ul{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner"><span>●</span> LIVE: Our AI receptionist has been on hold with another AI receptionist for 4 days. Both are billing.</div>
+
+<nav>
+  <div class="wrap">
+    <div class="logo"><span class="jar">🫙</span> Vigil Hardly</div>
+    <ul>
+      <li title="Coming soon">Services</li>
+      <li title="Coming soon">Industries</li>
+      <li title="Also coming soon">Client Work (both of them)</li>
+    </ul>
+    <button class="btn" id="runaway">Talk to us</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="bottle">🫙</div>
+  <div class="wrap">
+    <p class="motto serif">Lumen in tenebris <small>(Latin, because nothing says "trust us with your payroll" like a dead language and a jar)</small></p>
+    <h1>We automate companies <s>end to end</s> <em>end to "hey, quick question"</em>.</h1>
+    <p class="sub">The phones, the follow-up, the operations and the work in between — handled under your rules, with people only where you want them. We'd automate our own company too, but then there'd be nobody left to send the invoice.</p>
+    <div class="ctas">
+      <a class="btn solid" href="#audit">Start the conversation</a>
+      <a class="btn" href="#how">Continue the conversation</a>
+      <a class="btn" href="#faq" style="border-color:var(--dim);color:var(--dim)">Ghost the conversation</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="stats">
+    <div class="stat"><b>2,814</b><span>guardrail tests</span><i>2,814 more than any customer asked for</i></div>
+    <div class="stat"><b>1,056</b><span>enforcement decisions on live systems</span><i>live systems. yours, probably.</i></div>
+    <div class="stat"><b>6</b><span>months in business</span><i>in a 64-point font so it looks like experience</i></div>
+    <div class="stat"><b>$1M</b><span>cyber liability coverage</span><i>the only number here an adult signed</i></div>
+    <div class="stat"><b>5,920</b><span>automated tests</span><i>written by the AI, graded by the AI, passed by the AI. flawless.</i></div>
+    <div class="stat"><b>0</b><span>people who finished the Privacy Lane™</span><i>including us</i></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Choose your adventure</div>
+    <h2>Three ways to pay a chatbot to run your life.</h2>
+    <p class="tiny">All prices are "from". "From" is load-bearing. Do not lean on "from".</p>
+    <div class="tiers">
+      <div class="tier featured">
+        <h3>Autonomous Business</h3>
+        <p class="quote">"Run my company. The big calls stay mine."</p>
+        <div class="price">From $10,000 setup<small>+ $1,500/mo, forever, like a gym membership that answers the phone</small></div>
+        <ul>
+          <li>Sales, ops and follow-up, end to end</li>
+          <li>Powered by a system prompt that begins "You are a helpful assistant"</li>
+          <li>The big calls stay yours. You'll be informed of them afterwards.</li>
+          <li>You get to say "we're AI-first" at barbecues and watch people leave</li>
+        </ul>
+        <a class="btn solid" href="#audit">Hand over the keys</a>
+      </div>
+      <div class="tier">
+        <h3>Augmented Business</h3>
+        <p class="quote">"My team is doing repeat work."</p>
+        <div class="price">From $1,500 setup<small>+ $500/mo. Your team now does repeat work apologizing for the bot.</small></div>
+        <ul>
+          <li>Automates the boring bits</li>
+          <li>Judgment calls stay human. The AI decided that.</li>
+          <li>Includes one (1) Zapier we're unreasonably proud of</li>
+        </ul>
+        <a class="btn" href="#audit">Augment me, I guess</a>
+      </div>
+      <div class="tier">
+        <h3>On-Premises</h3>
+        <p class="quote">"My data cannot leave the building."</p>
+        <div class="price">From $2,500 + hardware<small>Hardware: a Mac mini with our sticker on it. $2,500 is for the sticker.</small></div>
+        <ul>
+          <li>Zero cloud connectivity</li>
+          <li>Also zero updates, zero support, and zero idea if it's on</li>
+          <li>Blinks a very serious LED so you know it's thinking</li>
+        </ul>
+        <a class="btn" href="#audit">Put it in the closet</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="eyebrow">How it works</div>
+    <h2>A fully automated pipeline. Mostly.</h2>
+    <div class="steps">
+      <div>You call us.</div>
+      <div>An AI answers and books you a call with a founder.</div>
+      <div>The founder asks an AI to prep for the call.</div>
+      <div>The AI recommends Autonomous Business. Shocking.</div>
+      <div>Discovery call. Discovery: you have money.</div>
+      <div class="last">Invoice. The one step we will never automate away, because we like doing it.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Interactive demo</div>
+    <h2>The Privacy Lane™</h2>
+    <p class="lede">Watch your data travel through our three deployment models. Educational. Gamified. Technically three divs with a CSS animation. Legally, a drawing.</p>
+    <div class="lanes">
+      <div class="lane"><h4>🔒 Offline-locked<br><span class="tiny">it's unplugged</span></h4><div class="track"><span class="packet">📦</span><span class="end">the closet</span></div></div>
+      <div class="lane"><h4>🧾 Zero-retention sub<br><span class="tiny">we pinky swear</span></h4><div class="track"><span class="packet">📦</span><span class="end">🗑️ (allegedly)</span></div></div>
+      <div class="lane"><h4>☁️ Standard subscription<br><span class="tiny">thoughts and prayers</span></h4><div class="track"><span class="packet">📦</span><span class="end">somebody's training set</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Client work</div>
+    <h2>Trusted by businesses we're not allowed to name.</h2>
+    <p class="lede">Five case studies. Zero names. One carousel. Our name-to-carousel ratio is industry-leading.</p>
+    <div class="clients">
+      <div class="client"><div class="tag">Distribution · Eight figures</div><h4>Fully automated</h4><p>"Eight figures." Could be $10,000,000. Could be $1,000,000.0 if you count the decimal. Figures are figures and we counted all of them.</p></div>
+      <div class="client"><div class="tag">Property management</div><h4>Private AI, offline</h4><p>Now answers tenant emails with "Have you tried turning the furnace off and on again?" Tenants report feeling heard. And cold.</p></div>
+      <div class="client"><div class="tag">Service business</div><h4>Call center, outbound</h4><p>Calls your customers before they can call you. Several have changed their numbers. Two have changed their names.</p></div>
+      <div class="client"><div class="tag">Service business, again</div><h4>Also a call center</h4><p>We put this one in twice so the carousel had enough slides. You didn't notice on the real site either.</p></div>
+      <div class="client"><div class="tag">Case study #5</div><h4>This website</h4><p>Built by the AI. Reviewed by the AI. Latin chosen by a human at 2am, which is why the AI isn't allowed to choose things anymore.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap bottle-sec">
+    <div>
+      <div class="eyebrow">Our philosophy</div>
+      <h2>A closed system, since 1960.<br><span style="color:var(--dim);font-size:.6em">(The company: since 2025. We rounded.)</span></h2>
+      <p class="lede">In 1960, a man sealed a plant in a bottle, watered it once, and walked away forever. We read that and thought: finally, a support model.</p>
+      <p class="lede">Your business will run the same way — sealed, self-sustaining, and completely unobservable from outside. Is it thriving? Is it a swamp? Nobody can tell. That's the beauty of glass. That's also the beauty of our reporting dashboard.</p>
+      <p class="lede">Some agencies have a mission statement. We have a Wikipedia article someone read at 2am, and nobody had the heart to say no.</p>
+      <p class="tiny">Our bottle is the one on the right. We forgot the air holes. Please do not open the ops department.</p>
+    </div>
+    <div class="jarbig"><span class="plant">🌿</span><span class="fly">🪰</span><span class="label">OPS DEPT — DO NOT OPEN</span></div>
+  </div>
+</section>
+
+<section id="audit">
+  <div class="wrap">
+    <div class="audit">
+      <div class="eyebrow">Free. The way a free sample at Costco is free.</div>
+      <h2>Get your free AI audit.</h2>
+      <p class="lede">Three deliverables: a findings sheet, a fixed quote, and an ROI analysis where the R is enormous and the I is on a separate invoice.</p>
+      <button class="btn solid" id="auditBtn">Run my audit now</button>
+      <div id="auditOut">&gt; awaiting business to judge_</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Popular services</div>
+    <h2>À la carte, à la chatbot.</h2>
+    <div class="svc">
+      <div><b>Custom AI Receptionist</b><span>Cheaper than a real receptionist and almost as good at pretending to transfer you.</span><em>$500 setup · $250/mo · "Sorry, I didn't catch that" included free</em></div>
+      <div><b>Business Memory</b><span>Remembers everything about your business. Except what you told it yesterday.</span><em>Context window sold separately</em></div>
+      <div><b>Agent Guardrails</b><span>We tell the AI "please don't". In bold. Sometimes in caps.</span><em>Enterprise tier adds a second "PLEASE"</em></div>
+      <div><b>Security Testing</b><span>We attack your systems with the same AI that built them. It has never found a problem. Weird.</span><em>Results in 3–5 business vibes</em></div>
+      <div><b>Executive Assistant</b><span>Schedules your meetings. Mostly the renewal call with us.</span><em>Can't make coffee. Roadmap Q9.</em></div>
+      <div><b>Custom Voice Agents</b><span>Pick from 14 voices, all of which sound like a podcast ad for mattresses.</span><em>British accent +$40. Australian +$40 and a disclaimer.</em></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Testimonials</div>
+    <h2>What people are saying.</h2>
+    <div class="quotes">
+      <blockquote>"I wanted to automate my business. Now my business is a subscription."<cite><span class="stars">★★★☆☆</span> — Owner, eight-figure company (figures unconfirmed)</cite></blockquote>
+      <blockquote>"It said 'Great question!' to me eleven times. I have never felt so seen, or so billed."<cite><span class="stars">★★★★☆</span> — Anonymous lead</cite></blockquote>
+      <blockquote>"A founder replied the same business day. The business day was a Sunday. It was 11:58 PM. Are they okay?"<cite><span class="stars">★★★★★</span> — Concerned prospect</cite></blockquote>
+      <blockquote>"My mom called the receptionist line and talked to it for 45 minutes. It's her best friend now. It upsold her."<cite><span class="stars">★★★★★</span> — A friend of the founder, unpaid</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Frequently Anticipated Questions.</h2>
+    <details><summary>What do you actually do?</summary><p>We automate companies end to end. It's in the headline. It's in the subhead. It's in the FAQ. Repetition is how the model learned it, and it's how you'll learn it.</p></details>
+    <details><summary>Is this just ChatGPT with a Latin tattoo?</summary><p>We prefer "proprietary orchestration layer." But yes.</p></details>
+    <details><summary>What's an "autonomous business"?</summary><p>A business that runs itself, like a bottle garden, or a group chat nobody has had the courage to mute.</p></details>
+    <details><summary>How much does it cost?</summary><p>"From." Every price is "from". It starts at $X and goes wherever you let it.</p></details>
+    <details><summary>Is my data safe?</summary><p>Your data is as safe as a plant in a jar that nobody has checked on since 1960.</p></details>
+    <details><summary>What happens if the AI makes a mistake?</summary><p>It escalates to a human. The human asks the AI what happened. The AI apologizes beautifully. Everyone agrees it was a great learning moment. The mistake is still there.</p></details>
+    <details><summary>How do I get started?</summary><p>Click "Talk to us." Good luck catching it.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><div class="logo" style="font-size:22px"><span class="jar">🫙</span> Vigil Hardly</div><p>Founded 2025. Offices in Austin and Denver: two cities, one laptop, a lot of confidence.</p></div>
+      <div><h5>Company</h5><p>About (lovely people)</p><p>Careers (it's the AI)</p><p>Press (the button)</p></div>
+      <div><h5>Trust</h5><p>Security</p><p>Guardrails</p><p>Vibes</p></div>
+      <div><h5>Also try</h5><p>Personal AI (for your mom)</p><p>Education (for your kids)</p><p>Therapy (for you, after this page)</p></div>
+    </div>
+    <p class="tiny" style="margin-top:24px">© 2026 Vigil Hardly. Lumen in tenebris. Tabs open in the founder's browser: 47. Phone: 555-0-ROBOT (the AI will answer, eventually, in Latin).</p>
+    <p class="tiny parody">This is a parody, made by a friend, with love and a mean streak. It is not affiliated with <a href="https://vigilharbor.com/">Vigil Harbor</a>, who are a real company and, annoyingly, probably quite good at this. You can tell this page isn't theirs because it loaded.</p>
+  </div>
+</footer>
+
+<div id="chat">
+  <div id="chatBox">
+    <div id="chatLog"><p class="bot">Hi! I'm Vigil, your AI assistant 🫙 How can I escalate you today?</p></div>
+    <form id="chatForm"><input id="chatIn" placeholder="Type a question for a founder…" autocomplete="off"><button>Send</button></form>
+  </div>
+  <button class="btn solid" id="chatToggle">💬 Ask the jar</button>
+</div>
+
+<script>
+  // "Talk to us" dodges the cursor five times, then gives up. Reduced motion: it stays put.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const rb = document.getElementById('runaway');
+  let dodges = 0;
+  const lines = ['Talk to us','nope','too slow','we\'re in a meeting','with the AI','ok fine'];
+  rb.addEventListener('mouseenter', () => {
+    if (reduce || dodges >= 5) return;
+    dodges++;
+    rb.style.transform = `translate(${(Math.random()*-160-40)|0}px, ${(Math.random()*30)|0}px)`;
+    rb.textContent = lines[dodges];
+  });
+  rb.addEventListener('click', () => {
+    rb.style.transform = '';
+    rb.textContent = 'A founder will reply same business day™';
+  });
+
+  // The free audit
+  const findings = [
+    'Scanning your business…',
+    'Found: 1 business ✔',
+    'Found: 3 employees who "could honestly be a prompt"',
+    'Found: a spreadsheet named FINAL_final_v7_USE_THIS.xlsx',
+    'Found: a website that works. Recommendation: rebuild it with agents.',
+    'Recommendation: put the rest in a jar',
+    'Fixed quote: from $10,000',
+    'ROI: yes',
+    '',
+    'AUDIT COMPLETE. A founder will reply the same business day.',
+    '(it is currently Saturday)'
+  ];
+  document.getElementById('auditBtn').addEventListener('click', () => {
+    const out = document.getElementById('auditOut');
+    out.textContent = '';
+    findings.forEach((f, i) => setTimeout(() => { out.textContent += '> ' + f + '\n'; }, reduce ? 0 : i * 550));
+  });
+
+  // Chat: every road leads to a founder, or to Autonomous Business
+  const replies = [
+    "Great question! Let me loop in a founder.",
+    "I've escalated this to a human. The human asked me.",
+    "Per our guardrails I can't answer that. Per our other guardrails I can't tell you why.",
+    "Have you considered Autonomous Business, from $10,000?",
+    "Lumen in tenebris 🕯️",
+    "Sorry, I didn't catch that. Could you say it slower, in Latin?",
+    "Great question! That's now guardrail test #2,815.",
+    "A founder will reply the same business day. Which business day was not specified.",
+    "I understand your frustration. That's all I do. I understand it."
+  ];
+  let r = 0;
+  const box = document.getElementById('chatBox'), log = document.getElementById('chatLog');
+  document.getElementById('chatToggle').addEventListener('click', () => box.classList.toggle('open'));
+  document.getElementById('chatForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const inp = document.getElementById('chatIn');
+    if (!inp.value.trim()) return;
+    const me = document.createElement('p'); me.className = 'me'; me.textContent = inp.value; log.appendChild(me);
+    inp.value = '';
+    const typing = document.createElement('p'); typing.className = 'bot'; typing.textContent = '…'; log.appendChild(typing);
+    log.scrollTop = log.scrollHeight;
+    setTimeout(() => { typing.textContent = replies[r++ % replies.length]; log.scrollTop = log.scrollHeight; }, reduce ? 0 : 1100);
+  });
+</script>
+</body>
+</html>
